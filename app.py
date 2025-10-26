@@ -56,14 +56,14 @@ def get_repeated_images(target_path):
     images = sorted(target_path.rglob("*.png"))
     unique_images = []
 
-    for i, image in enumerate(images):
+    for image in images:
         if (len(unique_images) == 0):
             unique_images.append([image])
             continue
 
         has_similar = False
 
-        for j, unique_image in enumerate(unique_images):
+        for unique_image in unique_images:
             img_a = unique_image[0]
             img_b = image
 
