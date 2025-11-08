@@ -1,4 +1,8 @@
 .devcontainer/
 venv/
+.venv/
 output/
 input/
+build/
+*.egg-info
+*.egg-info/
