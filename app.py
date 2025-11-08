@@ -130,8 +130,15 @@ def parse_document(input_doc_path, output_path, start_page, end_page):
         }
     )
 
+    page_range_to_pass = {
+        "start": start_page,
+        "end": end_page
+    } if start_page is not None and end_page is not None else None
+
+    print('page_range_to_pass (verified type):', page_range_to_pass, type(page_range_to_pass))
+
     conv_res = converter.convert(
-        input_doc_path, page_range=(start_page, end_page))
+        input_doc_path)
 
     doc_filename = conv_res.input.file.stem
 
